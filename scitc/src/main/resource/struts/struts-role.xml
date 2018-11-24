@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="role" namespace="/role" extends="cx">
+        <action name="list" class="roleAction" method="list">
+            <result name="success">/WEB-INF/page/role/role-list.jsp</result>
+        </action>
+        <action name="goAdd" class="roleAction" method="goAdd">
+            <result name="success">/WEB-INF/page/role/role-add.jsp</result>
+        </action>
+        <action name="add" class="roleAction" method="add">
+        </action>
+        <action name="delete" class="roleAction" method="delete">
+        </action>
+        <action name="deleteAll" class="roleAction" method="deleteAll">
+        </action>
+        <action name="goUpdate" class="roleAction" method="goUpdate">
+            <result name="success">/WEB-INF/page/role/role-edit.jsp</result>
+        </action>
+        <action name="update" class="roleAction" method="update">
+        </action>
+        <action name="editAccessPage" class="roleAction" method="editAccessPage">
+            <result name="success">/WEB-INF/page/role/role-access.jsp</result>
+        </action>
+        <action name="editAccess" class="roleAction" method="editAccess">
+        </action>
+    </package>
+</struts>

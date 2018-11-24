@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <!--管理员模块-->
+    <package name="admin" namespace="/admin" extends="cx">
+        <action name="list" class="adminAction" method="list">
+            <result name="success">/WEB-INF/page/user/user-list.jsp</result>
+        </action>
+        <action name="delete" class="adminAction" method="delete">
+        </action>
+        <action name="goUpdate" class="adminAction" method="goUpdate">
+            <result name="success">/WEB-INF/page/user/user-edit.jsp</result>
+        </action>
+        <action name="update" class="adminAction" method="update">
+        </action>
+        <action name="goAdd" class="adminAction" method="goAdd">
+            <result name="success">/WEB-INF/page/user/user-add.jsp</result>
+        </action>
+        <action name="add" class="adminAction" method="add">
+        </action>
+        <action name="deleteAll" class="adminAction" method="deleteAll">
+        </action>
+        <action name="search" class="adminAction" method="search">
+            <result name="success">/WEB-INF/page/user/user-list.jsp</result>
+        </action>
+    </package>
+</struts>

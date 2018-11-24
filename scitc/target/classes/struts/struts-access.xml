@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="access" namespace="/access" extends="cx">
+        <!--用户模块-->
+        <action name="access_*" class="accessAction" method="{1}">
+        </action>
+        <action name="access" class="accessAction" method="access">
+            <result name="success">/WEB-INF/page/access/access.jsp</result>
+        </action>
+        <action name="parents" class="accessAction" method="parents">
+        </action>
+        <action name="add" class="accessAction" method="add">
+        </action>
+        <action name="getAllAccess" class="accessAction" method="getAllAccess">
+        </action>
+        <action name="getRoleAccess" class="accessAction" method="getRoleAccess">
+        </action>
+        <action name="delAccess" class="accessAction" method="delAccess">
+        </action>
+        <action name="batchDelete" class="accessAction" method="batchDelete">
+        </action>
+        <action name="goUpdate" class="accessAction" method="goUpdate">
+            <result name="success">/WEB-INF/page/access/access-edit.jsp</result>
+        </action>
+        <action name="update" class="accessAction" method="update">
+        </action>
+    </package>
+</struts>

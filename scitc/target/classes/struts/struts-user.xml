@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="user" namespace="/user" extends="cx">
+    <!--用户模块-->
+    <action name="user_*" class="userAction" method="{1}">
+        <result name="success">/WEB-INF/page/user/login.jsp</result>
+        <result name="logout">/WEB-INF/page/user/login.jsp</result>
+    </action>
+</package>
+</struts>

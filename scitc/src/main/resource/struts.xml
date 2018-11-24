@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="cx" extends="struts-default" namespace="/">
+        <!--配置拦截器-->
+        <interceptors>
+            <!--注册自定义的拦截器-->
+            <interceptor name="loginInterceptor" class="com.cx.web.interceptor.LoginInterceptor"/>
+            <!--配置拦截器栈-->
+            <interceptor-stack name="myStack">
+                <interceptor-ref name="loginInterceptor">
+                    <!--对action中的方法放行-->
+                    <param name="excludeMethods">loginPage,login</param>
+                </interceptor-ref>
+                <!--加入struts默认的拦截器-->
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+        <!--调用自己的拦截器-->
+        <default-interceptor-ref name="myStack"/>
+
+        <!--全局响应界面 登录失败返回的页面-->
+        <global-results>
+            <result name="no_login" type="redirectAction">
+                <param name="namespace">/user</param>
+                <param name="actionName">user_loginPage</param>
+            </result>
+        </global-results>
+
+        <!--后台首页-->
+        <action name="main_*" class="mainAction" method="{1}">
+            <result name="success">/WEB-INF/page/index.jsp</result>
+            <result name="welcome">/WEB-INF/page/welcome.jsp</result>
+        </action>
+    </package>
+    <!--引入用户的配置文件-->
+    <include file="struts/struts-user.xml"/>
+    <include file="struts/struts-access.xml"/>
+    <include file="struts/struts-admin.xml"/>
+    <include file="struts/struts-role.xml"/>
+    <!--不拦截静态资源-->
+    <constant name="struts.action.excludePattern" value="/static/.*?"/>
+</struts>

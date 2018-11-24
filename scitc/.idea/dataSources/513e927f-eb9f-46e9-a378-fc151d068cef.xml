@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="sc@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="sc">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="blog"/>
+    <schema id="4" parent="1" name="demo2"/>
+    <schema id="5" parent="1" name="hjx"/>
+    <schema id="6" parent="1" name="information_schema"/>
+    <schema id="7" parent="1" name="java"/>
+    <schema id="8" parent="1" name="javaweb"/>
+    <schema id="9" parent="1" name="jpa"/>
+    <schema id="10" parent="1" name="l024"/>
+    <schema id="11" parent="1" name="mybatis"/>
+    <schema id="12" parent="1" name="mysql"/>
+    <schema id="13" parent="1" name="performance_schema"/>
+    <schema id="14" parent="1" name="php"/>
+    <schema id="15" parent="1" name="pipixia"/>
+    <schema id="16" parent="1" name="qiqiim"/>
+    <schema id="17" parent="1" name="qq"/>
+    <schema id="18" parent="1" name="rjb"/>
+    <schema id="19" parent="1" name="shop"/>
+    <schema id="20" parent="1" name="shopping"/>
+    <schema id="21" parent="1" name="springboot"/>
+    <schema id="22" parent="1" name="springcloud01"/>
+    <schema id="23" parent="1" name="springcloud02"/>
+    <schema id="24" parent="1" name="springcloud03"/>
+    <schema id="25" parent="1" name="ssh"/>
+    <schema id="26" parent="1" name="ssm"/>
+    <schema id="27" parent="1" name="svw"/>
+    <schema id="28" parent="1" name="sys"/>
+    <schema id="29" parent="1" name="taobao"/>
+    <schema id="30" parent="1" name="tianya"/>
+    <schema id="31" parent="1" name="tp5"/>
+    <schema id="32" parent="1" name="yb"/>
+    <table id="33" parent="2" name="access">
+      <Comment>权限表</Comment>
+    </table>
+    <table id="34" parent="2" name="address">
+      <Comment>用户地址表</Comment>
+    </table>
+    <table id="35" parent="2" name="role">
+      <Comment>用户角色表</Comment>
+    </table>
+    <table id="36" parent="2" name="roleaccess">
+      <Comment>角色权限关系表</Comment>
+    </table>
+    <table id="37" parent="2" name="user">
+      <Comment>用户表</Comment>
+    </table>
+    <column id="38" parent="33" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="39" parent="33" name="accessName">
+      <Position>2</Position>
+      <Comment>权限名字</Comment>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="33" name="accessUrl">
+      <Position>3</Position>
+      <Comment>权限的规则</Comment>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="33" name="accessLevel">
+      <Position>4</Position>
+      <Comment>权限等级</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="33" name="accessParentId">
+      <Position>5</Position>
+      <Comment>权限父级id</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="33" name="isMenu">
+      <Position>6</Position>
+      <Comment>是否是菜单</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="44" parent="33" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="45" parent="34" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="46" parent="34" name="userId">
+      <Position>2</Position>
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="34" name="address">
+      <Position>3</Position>
+      <Comment>用户地址</Comment>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="48" parent="34" name="FK_ik9bfkytk5lrm7yq2bhnf6fe6">
+      <ColNames>userId</ColNames>
+    </index>
+    <key id="49" parent="34" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="50" parent="34" name="FK_ik9bfkytk5lrm7yq2bhnf6fe6">
+      <ColNames>userId</ColNames>
+      <RefSchemaName>sc</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="51" parent="35" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="52" parent="35" name="roleName">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="35" name="roleDesc">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="35" name="isSuper">
+      <Position>4</Position>
+      <Comment>是否超级管理员:1是,0不是</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="55" parent="35" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="56" parent="36" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="57" parent="36" name="roleId">
+      <Position>2</Position>
+      <Comment>角色id</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="36" name="accessId">
+      <Position>3</Position>
+      <Comment>权限id</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="59" parent="36" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="60" parent="37" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="61" parent="37" name="userName">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="37" name="userPhone">
+      <Position>3</Position>
+      <Comment>用户手机号</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="37" name="userPwd">
+      <Position>4</Position>
+      <Comment>用户密码</Comment>
+      <DataType>char(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="37" name="userAddTime">
+      <Position>5</Position>
+      <Comment>用户添加时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="37" name="roleId">
+      <Position>6</Position>
+      <Comment>用户角色</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="66" parent="37" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

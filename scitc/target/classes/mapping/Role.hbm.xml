@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.cx.pojo.Role" table="role" schema="sc">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <!--一对多配置-->
+        <set name="users" lazy="false">
+            <key column="roleId"></key>
+            <one-to-many class="com.cx.pojo.User"/>
+        </set>
+        <!--多对多配置-->
+        <set name="accesses" table="roleaccess">
+            <key column="roleId"></key>
+            <many-to-many column="accessId" class="com.cx.pojo.Access"></many-to-many>
+        </set>
+        <property name="roleName" column="roleName"/>
+        <property name="roleDesc" column="roleDesc"/>
+        <property name="isSuper" column="isSuper"/>
+    </class>
+</hibernate-mapping>

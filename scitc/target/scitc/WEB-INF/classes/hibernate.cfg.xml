@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<!-- 先配置SessionFactory标签 一个数据库对应一个session-facyory -->
+	<session-factory>
+		<!-- 必须配置的五个参数 -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306?shop</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<!-- 配置数据库方言 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- 可选配置项 -->
+		<!-- 控制台输出sql语句 -->
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<!-- 生成数据库的表结构 -->
+		<property name="hibernate.hbm2dd1.auto">update</property>
+		<!-- 引入映射文件xml -->
+		<mapping resource="mapping/User.hbm.xml"></mapping>
+	</session-factory>
+</hibernate-configuration>
